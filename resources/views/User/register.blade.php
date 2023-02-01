@@ -3,11 +3,11 @@
 @section('css')
 <style>
     body {
-        background: #6a70fc;
+        background: #225335;
     }
 
     .btn-purple {
-        background: #6a70fc;
+        background: #225335;
         width: 100%;
         color: #fff;
     }
@@ -21,8 +21,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-5">
-            <h2 class="text-center text-white mb-0 mt-5">PEKAT</h2>
-            <P class="text-center text-white mb-5">Pengaduan Masyarakat</P>
+            <h2 class="text-center text-white mb-0 mt-5">ARRA</h2>
+            <P class="text-center text-white mb-5">Aduan Resmi Rakyat</P>
             <div class="card mt-5">
                 <div class="card-body">
                     <h2 class="text-center mb-5">FORM DAFTAR</h2>

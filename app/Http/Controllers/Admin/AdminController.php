@@ -12,15 +12,15 @@ class AdminController extends Controller
 {
     public function formlogin()
     {
-        return view('Admin.login'); 
+        return view('Admin.login');
     }
 
     public function login(Request $request)
     {
         $username = Petugas::where('username', $request->username)->first();
-   
+
         if(!$username) {
-            return redirect()->back()->with(['pesan' => 'Username tidak terdaftar!']);   
+            return redirect()->back()->with(['pesan' => 'Username tidak terdaftar!']);
         }
 
         $password = Hash::check($request->password, $username->password);

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 @endsection
 
-@section('title', 'PEKAT - Pengaduan Masyarakat')
+@section('title', 'ARRA - Aduan Resmi Rakyat')
 
 @section('content')
 {{-- Section Header --}}
@@ -13,8 +13,8 @@
         <div class="container">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <h4 class="semi-bold mb-0 text-white">PEKAT</h4>
-                    <p class="italic mt-0 text-white">Pengaduan Masyarakat</p>
+                    <h4 class="semi-bold mb-0 text-white">ARRA</h4>
+                    <p class="italic mt-0 text-white">Aduan Resmi Rakyat</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
     </nav>
 
     <div class="text-center">
-        <h2 class="medium text-white mt-3">Layanan Pengaduan Masyarakat</h2>
+        <h2 class="medium text-white mt-3">Aduan Resmi Rakyat</h2>
         <p class="italic text-white mb-5">Sampaikan laporan Anda langsung kepada yang pemerintah berwenang</p>
     </div>
 
@@ -89,7 +89,7 @@
 </div>
 {{-- Section Hitung Pengaduan --}}
 <div class="pengaduan mt-5">
-    <div class="bg-purple">
+    <div class="bg-green">
         <div class="text-center">
             <h5 class="medium text-white mt-3">JUMLAH LAPORAN SEKARANG</h5>
             <h2 class="medium text-white">10</h2>
@@ -100,7 +100,7 @@
 <div class="mt-5">
     <hr>
     <div class="text-center">
-        <p class="italic text-secondary">© 2021 Ihsanfrr • All rights reserved</p>
+        <p class="italic text-secondary">© 202 Araa • All rights reserved</p>
     </div>
 </div>
 {{-- Modal --}}
@@ -120,7 +120,7 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-purple text-white mt-3" style="width: 100%">MASUK</button>
+                    <button type="submit" class="btn btn- text-white mt-3" style="width: 100%">MASUK</button>
                 </form>
                 @if (Session::has('pesan'))
                 <div class="alert alert-danger mt-2">
