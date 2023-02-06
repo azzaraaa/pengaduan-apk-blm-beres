@@ -21,9 +21,10 @@ class TanggapanController extends Controller
             $pengaduan->update(['status' => $request->status]);
 
             $tanggapan->update([
+                'id_pengaduan' => $request->id_pengaduan,
+                'isi_tanggapan' => $request->tanggapan,
                 'tgl_tanggapan' => date('Y-m-d'),
-                'tanggapan' => $request->tanggapan,
-                'id_petugas' => Auth::guard('admin')->user()->id-petugas,
+                'id_petugas' => Auth::guard('admin')->user()->id_petugas
             ]);
 
             return redirect()->route('pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan])->with(['status' => 'Berhasil Dikirim!']);
@@ -33,8 +34,8 @@ class TanggapanController extends Controller
             $tanggapan = Tanggapan::create([
                 'id_pengaduan' => $request->id_pengaduan,
                 'tgl_tanggapan' => date('Y-m-d'),
-                'tanggapan' => $request->tanggapan,
-                'id_petugas' => Auth::guard('admin')->user()->id_petugas,
+                'isi_tanggapan' => $request->tanggapan,
+                'id_petugas' => Auth::guard('admin')->user()->id_petugas
             ]);
 
             return redirect()->route('pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan])->with(['status' => 'Berhasil Dikirim!']);

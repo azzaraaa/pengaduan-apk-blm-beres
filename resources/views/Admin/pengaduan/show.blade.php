@@ -62,12 +62,12 @@
                                 <th>Status</th>
                                 <td>:</td>
                                 <td>
-                                    @if ($pengaduan ->status = '0')
+                                    @if ($pengaduan->status = '0')
                                         <a href="#" class="badge badge-danger">Pending</a>
-                                    @elseif ($pengaduan ->status = 'proses')
-                                        <a href="#" class="bagde badge-warning text-white">Proses</a>
+                                    @elseif ($pengaduan->status = 'selesai')
+                                        <a href="#" class="badge badge-success succes">Selesai</a>
                                     @else
-                                        <a href="#" class="badge badge-warning succes">Selesai</a>
+                                    <a href="#" class="bagde badge-warning text-white">Proses</a>
                                     @endif
                                 </td>
                             </tr>
@@ -86,7 +86,7 @@
                 <div class="card-body">
                     <form action="{{ route('tanggapan.createOrUpdate') }}" method="POST">
                         @csrf
-                        <input type="hidden" name="id_pengaduan" value="{{ $pengaduan->id_pengaduan}}">
+                        <input type="hidden" name="id_pengaduan" value="{{ $pengaduan->id_pengaduan }}">
                         <div class="form-group">
                             <label for="status">Status</label>
                             <div class="input-group mb-3">
