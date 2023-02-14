@@ -14,7 +14,7 @@ class Pengaduan extends Model
     protected $fillable = [
         'tgl_pengaduan',
         'nik',
-        'isi_pengaduan',
+        'isi_laporan',
         'foto',
         'status'
     ];

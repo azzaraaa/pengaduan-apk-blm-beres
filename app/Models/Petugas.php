@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticable;
 class Petugas extends Authenticable
 {
     use HasFactory;
-    
+
     protected $primaryKey = 'id_petugas';
     protected $fillable = [
         'nama_petugas',

@@ -10,9 +10,23 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
         @yield('css')
+
+        <style>
+            .btn-purple{
+                background: #225335;
+                border: 1px solid #225335;
+                color: #fff;
+            }
+
+            .btn-purple:hover {
+                background: #225335;
+                border: 1px solid #225335;
+                color: #fff;
+            }
+        </style>
     <link rel="stylesheet" href="{{ asset('css/admin.css')}}">
 
 </head>

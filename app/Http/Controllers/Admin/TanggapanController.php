@@ -22,7 +22,7 @@ class TanggapanController extends Controller
 
             $tanggapan->update([
                 'id_pengaduan' => $request->id_pengaduan,
-                'isi_tanggapan' => $request->tanggapan,
+                'isi_tanggapan' => $request->isi_tanggapan,
                 'tgl_tanggapan' => date('Y-m-d'),
                 'id_petugas' => Auth::guard('admin')->user()->id_petugas
             ]);

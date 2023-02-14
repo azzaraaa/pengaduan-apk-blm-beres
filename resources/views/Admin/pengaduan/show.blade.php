@@ -62,12 +62,12 @@
                                 <th>Status</th>
                                 <td>:</td>
                                 <td>
-                                    @if ($pengaduan->status = '0')
+                                    @if ($pengaduan->status == '0')
                                         <a href="#" class="badge badge-danger">Pending</a>
-                                    @elseif ($pengaduan->status = 'selesai')
-                                        <a href="#" class="badge badge-success succes">Selesai</a>
+                                    @elseif ($pengaduan->status == 'proses')
+                                        <a href="#" class="bagde badge-warning text-white">Proses</a>
                                     @else
-                                    <a href="#" class="bagde badge-warning text-white">Proses</a>
+                                        <a href="#" class="badge badge-success succes">Selesai</a>
                                     @endif
                                 </td>
                             </tr>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tanggapan">Tanggapan</label>
-                            <textarea name="tanggapan" id="tanggapan" rows="4" class="form-control" placeholder="Belum ada tanggapan">{{ $tanggapan->tanggapan ?? '' }}</textarea>
+                            <textarea name="isi_tanggapan" id="isi_tanggapan" rows="4" class="form-control" placeholder="Belum ada tanggapan">{{ $isi_tanggapan->isi_tanggapan ?? '' }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-purple">KIRIM</button>
                     </form>
