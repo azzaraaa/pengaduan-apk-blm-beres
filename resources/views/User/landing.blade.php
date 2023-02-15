@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    @if(Auth::guard('masyarakat')->check())
+                    @if(Illuminate\Support\Facades\Auth::guard('masyarakat')->check())
                     <ul class="navbar-nav text-center ml-auto">
                         <li class="nav-item">
                             <a class="nav-link ml-3 text-white" href="{{ route('pekat.laporan') }}">Laporan</a>
@@ -68,7 +68,7 @@
                 @endforeach
             @endif
 
-            @if (Session::has('pengaduan'))
+            @if (Illuminate\Support\Facades\Session::has('pengaduan'))
                 <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('pengaduan') }}</div>
             @endif
 
@@ -122,9 +122,9 @@
                     </div>
                     <button type="submit" class="btn btn- text-white mt-3" style="width: 100%">MASUK</button>
                 </form>
-                @if (Session::has('pesan'))
+                @if (Illuminate\Support\Facades\Session::has('pesan'))
                 <div class="alert alert-danger mt-2">
-                    {{ Session::get('pesan') }}
+                    {{ Illuminate\Support\Facades\Session::get('pesan') }}
                 </div>
                 @endif
             </div>
@@ -134,7 +134,7 @@
 @endsection
 
 @section('js')
-    @if (Session::has('pesan'))
+    @if (Illuminate\Support\Facades\Session::has('pesan'))
     <script>
         $('#loginModal').modal('show');
 

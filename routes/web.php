@@ -50,6 +50,8 @@ Route::prefix('admin')->group(function (){
 
         //Laporan
         Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::post('getLaporan', [LaporanController::class, 'getLaporan'])->name('laporan.getLaporan');
+        Route::get('Laporan/cetak/{from}/{to}', [LaporanController::class, 'cetaklaporan'])->name('laporan.cetakLaporan');
 
     });
 

@@ -15,6 +15,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        // dd(Auth::guard('masyarakat')->check());
         return view('user.landing');
     }
 
