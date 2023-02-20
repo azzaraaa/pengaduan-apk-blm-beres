@@ -8,6 +8,7 @@ use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -16,7 +17,8 @@ class UserController extends Controller
     public function index()
     {
         // dd(Auth::guard('masyarakat')->check());
-        return view('user.landing');
+        $pengaduan = DB::table('pengaduans')->get();
+        return view('user.landing', ['pengaduan' => $pengaduan]);
     }
 
     public function login(Request $request)

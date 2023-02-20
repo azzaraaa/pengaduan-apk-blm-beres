@@ -8,7 +8,10 @@ use App\Http\Controllers\Admin\MasyarakatController;
 use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\TanggapanController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\JumlahController;
+use App\Http\Controller\LogoutController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\SessionGuard;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +54,7 @@ Route::prefix('admin')->group(function (){
         //Laporan
         Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
         Route::post('getLaporan', [LaporanController::class, 'getLaporan'])->name('laporan.getLaporan');
-        Route::get('Laporan/cetak/{from}/{to}', [LaporanController::class, 'cetaklaporan'])->name('laporan.cetakLaporan');
+        Route::get('Laporan/cetak/{from}/{to}', [LaporanController::class, 'cetakLaporan'])->name('laporan.cetakLaporan');
 
     });
 
@@ -61,6 +64,7 @@ Route::prefix('admin')->group(function (){
 
         //Pengaduan
         Route::resource('pengaduan', PengaduanController::class);
+        // Route::get('/', [JumlahController::class, 'index'])->name('pengaduan.JumlahLaporan');
 
         //Tanggapan
         Route::post('tanggapan/createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
@@ -70,9 +74,8 @@ Route::prefix('admin')->group(function (){
     });
 
     Route::middleware(['isGuest'])->group(function () {
-        Route::get('/', [AdminController::class, 'formLogin'])->name('admin.formlogin');
+        Route::get('/login', [AdminController::class, 'formlogin'])->name('admin.formlogin');
         Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
     });
-
 
 });

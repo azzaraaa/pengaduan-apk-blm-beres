@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\SessionGuard;
 
 class IsPetugas
 {
@@ -20,7 +21,7 @@ class IsPetugas
         if (Auth::guard('admin')->check()) {
             if (Auth::guard('admin')->user()->level == 'petugas') {
                 return $next($request);
-            }elseif (Auth::guard('admin')->level == 'admin') {
+            }elseif (Auth::guard('admin')->user()->level == 'admin') {
                 return $next($request);
             }
         }

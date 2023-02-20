@@ -47,7 +47,7 @@
                     </form>
                 </div>
             </div>
-            @if (Session::has('pesan'))
+            @if (Illuminate\Support\Facades\Session::has('pesan'))
             <div class="alert alert-danger mt-2">
                 {{ Session::get('pesan') }}
             </div>

@@ -41,20 +41,23 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="{{ Request::is('admin\dashboard') ? 'active' : '' }}">
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard.index') }}">Dashboard</a>
                 </li>
-                <li class="{{ Request::is('admin\pengaduan') ? 'active' : '' }}">
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\pengaduan') ? 'active' : '' }}">
                     <a href="{{ route('pengaduan.index') }}">Pengaduan</a>
                 </li>
-                <li class="{{ Request::is('admin\petugas') ? 'active' : '' }}">
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\petugas') ? 'active' : '' }}">
                     <a href="{{ route('petugas.index') }}">Petugas</a>
                 </li>
-                <li class="{{ Request::is('admin\masyarakat') ? 'active' : '' }}">
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\masyarakat') ? 'active' : '' }}">
                     <a href="{{ route('masyarakat.index') }}">Masyarakat</a>
                 </li>
-                <li class="{{ Request::is('admin\laporan') ? 'active' : '' }}">
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\laporan') ? 'active' : '' }}">
                     <a href="{{ route('laporan.index') }}">Laporan</a>
+                </li>
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\logout') ? 'active' : '' }}">
+                    <a href="{{ route('admin.logout') }}">LOGOUT </a>
                 </li>
             </ul>
         </nav>
@@ -78,7 +81,12 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <a href="" class="btn btn-white btn-sm">{{ Auth::guard('admin')->user()->nama_petugas}}</a>
+                            <a href="" class="btn btn-white btn-sm">{{ Illuminate\Support\Facades\Auth::guard('admin')->user()->nama_petugas}}</a>
+                            {{--  <form action="{{ route('admin.logout') }}" method="post">
+                                @csrf
+                                <button type="submit">Logout</button>
+                            </form>  --}}
+                            {{--  <a href="{{ route('admin.logout') }}">logout</a>  --}}
                         </ul>
                     </div>
                 </div>

@@ -51,7 +51,7 @@
                             <tr>
                                 <th>Foto</th>
                                 <td>:</td>
-                                <td><img src="{{ Storage::url($pengaduan->foto) }}" alt="Foto Pengaduan" class='embed-responsive'></td>
+                                <td><img src="{{ Illuminate\Support\Facades\Storage::url($pengaduan->foto) }}" alt="Foto Pengaduan" class='embed-responsive'></td>
                             </tr>
                             <tr>
                                 <th>Isi Laporan</th>
@@ -113,9 +113,9 @@
                         </div>
                         <button type="submit" class="btn btn-purple">KIRIM</button>
                     </form>
-                    @if (Session::has('status'))
+                    @if (Illuminate\Support\Facades\Session::has('status'))
                         <div class="alert alert-succes mt-2">
-                            {{ Session::get('status')}}
+                            {{Illuminate\Support\Facades\Session::get('status')}}
                         </div>
                     @endif
                 </div>

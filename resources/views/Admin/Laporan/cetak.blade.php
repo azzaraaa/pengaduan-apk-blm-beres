@@ -26,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($pengaduan as $k =>v)
+                @foreach ($pengaduan as $k => $v)
                     <tr>
                         <td>{{ $k += 1 }}</td>
                         <td>{{ $v->tgl_pengaduan->format('d-M-Y') }}</td>

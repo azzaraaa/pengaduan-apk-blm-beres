@@ -44,9 +44,9 @@
                     </form>
                 </div>
             </div>
-            @if (Session::has('pesan'))
+            @if (Illuminate\Support\Facades\Session::has('pesan'))
             <div class="alert alert-danger mt-2">
-                {{ Session::get('pesan') }}
+                {{ Illuminate\Support\Facades\Session::get('pesan') }}
             </div>
             @endif
             <a href="{{ route('pekat.index') }}" class="btn btn-warning text-white mt-3" style="width: 100%">Kembali ke Halaman Utama</a>

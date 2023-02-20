@@ -28,7 +28,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ml-3 text-white" href="{{ route('pekat.logout') }}"
-                                style="text-decoration: underline">{{ Auth::guard('masyarakat')->user()->nama }}</a>
+                                style="text-decoration: underline">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a>
                         </li>
                     </ul>
                     @else
@@ -91,8 +91,8 @@
 <div class="pengaduan mt-5">
     <div class="bg-green">
         <div class="text-center">
-            <h5 class="medium text-white mt-3">JUMLAH LAPORAN SEKARANG</h5>
-            <h2 class="medium text-white">10</h2>
+            <h5 class="medium text-dark mt-3">JUMLAH LAPORAN SEKARANG</h5>
+            <h2 class="medium text-dark">{{ $pengaduan->count() }}</h2>
         </div>
     </div>
 </div>
@@ -100,7 +100,7 @@
 <div class="mt-5">
     <hr>
     <div class="text-center">
-        <p class="italic text-secondary">© 202 Araa • All rights reserved</p>
+        <p class="italic text-dark">© 2023 Araa • All rights reserved</p>
     </div>
 </div>
 {{-- Modal --}}
