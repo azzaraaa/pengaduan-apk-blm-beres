@@ -10,24 +10,24 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    @yield('css')
 
-        @yield('css')
+    <style>
+        .btn-purple{
+            background: #890F0D;
+            border: 1px solid #630606;
+            color: #fff;
+        }
 
-        <style>
-            .btn-purple{
-                background: #225335;
-                border: 1px solid #225335;
-                color: #fff;
-            }
+        .btn-purple:hover {
+            background: #890F0D;
+            border: 1px solid #630606;
+            color: #fff;
+        }
+    </style>
 
-            .btn-purple:hover {
-                background: #225335;
-                border: 1px solid #225335;
-                color: #fff;
-            }
-        </style>
-    <link rel="stylesheet" href="{{ asset('css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
 </head>
 
@@ -36,35 +36,42 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3 class="mb-0">ARRA</h3>
-                <p class="text-white mb-0">Aduan Resmi Rakyat</p>
+                <span class="d-flex" style="align-content: center;gap:10px;">
+                    <span>ARRA</span>
+                </span>
+                <p class="text-white  mb-0">ADUAN RESMI RAKYAT</p>
             </div>
 
             <ul class="list-unstyled components">
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard.index') }}">Dashboard</a>
+                    <a href="{{ route('dashboard.index') }}"<i class="bi bi-house-door"></i> DASHBOARD</a>
                 </li>
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\pengaduan') ? 'active' : '' }}">
-                    <a href="{{ route('pengaduan.index') }}">Pengaduan</a>
+                    <a href="{{ route('pengaduan.index') }}"<i class="bi bi-journals"></i> PENGADUAN</a>
                 </li>
+
+                @if (Illuminate\Support\Facades\Auth::guard('admin')->user()->level == 'admin')
+
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\petugas') ? 'active' : '' }}">
-                    <a href="{{ route('petugas.index') }}">Petugas</a>
+                    <a href="{{ route('petugas.index') }}"<i class="bi bi-person-bounding-box"></i> PETUGAS</a>
                 </li>
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\masyarakat') ? 'active' : '' }}">
-                    <a href="{{ route('masyarakat.index') }}">Masyarakat</a>
+                    <a href="{{ route('masyarakat.index') }}"<i class="bi bi-people-fill"></i> MASYARAKAT</a>
                 </li>
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\laporan') ? 'active' : '' }}">
-                    <a href="{{ route('laporan.index') }}">Laporan</a>
+                    <a href="{{ route('laporan.index') }}"<i class="bi bi-folder"></i> LAPORAN</a>
                 </li>
-                <li class="{{ Illuminate\Support\Facades\Request::is('admin\logout') ? 'active' : '' }}">
-                    <a href="{{ route('admin.logout') }}">LOGOUT </a>
+
+                @endif
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\logout') }}">
+                    <a href="{{ route('admin.logout') }}" onclick="return confirm('Logout Now?')"><i class="bi bi-door-open"></i> LOG OUT</a>
                 </li>
             </ul>
         </nav>
 
 
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg " style="background-color: #dadada">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="navbar-btn">
@@ -72,7 +79,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto"  type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
@@ -81,17 +88,12 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <a href="" class="btn btn-white btn-sm">{{ Illuminate\Support\Facades\Auth::guard('admin')->user()->nama_petugas}}</a>
-                            {{--  <form action="{{ route('admin.logout') }}" method="post">
-                                @csrf
-                                <button type="submit">Logout</button>
-                            </form>  --}}
-                            {{--  <a href="{{ route('admin.logout') }}">logout</a>  --}}
+                            <a href="" class="btn btn-white btn-sm">{{ Illuminate\Support\Facades\Auth::guard('admin')->user()->nama_petugas }}</a>
                         </ul>
                     </div>
                 </div>
             </nav>
-            @yield('content')
+        @yield('content')
         </div>
     </div>
 

@@ -3,11 +3,13 @@
 @section('css')
 <style>
     body {
-        background: #225335;
+        background-image: url("{{ asset('assets/mrn.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .btn-purple {
-        background: #225335;
+        background: #5E0606;
         width: 100%;
         color: #fff;
     }
@@ -52,7 +54,7 @@
                 {{ Session::get('pesan') }}
             </div>
             @endif
-            <a href="{{ route('pekat.index') }}" class="btn btn-warning text-white mt-3" style="width: 100%">Kembali ke Halaman Utama</a>
+            <a href="{{ route('pekat.index') }}" class="btn btn-purple text-white mt-3" style="width: 100%">Kembali ke Halaman Utama</a>
         </div>
     </div>
 </div>

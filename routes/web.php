@@ -8,10 +8,9 @@ use App\Http\Controllers\Admin\MasyarakatController;
 use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\TanggapanController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\User\JumlahController;
-use App\Http\Controller\LogoutController;
+use App\Http\Controllers\User\jumlahPengaduanController;
+use App\Http\Controllers\Petugas\Petugas2Controller;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth\SessionGuard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,28 +22,27 @@ use Illuminate\Auth\SessionGuard;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [UserController::class, 'index'])->name('pekat.index');
+Route::get('/', [jumlahPengaduanController::class, 'index'])->name('pekat.index');
 
 Route::middleware(['isMasyarakat'])->group(function () {
-    Route::post('/store', [UserController::class, 'storePengaduan'])->name('pekat.store');
-    Route::get('/laporan/{siapa?}', [UserController::class, 'laporan'])->name('pekat.laporan');
-    Route::get('/logout', [UserController::class, 'logout'])->name('pekat.logout');
+        Route::post('/store', [UserController::class, 'storePengaduan'])->name('pekat.store');
+        Route::get('/laporan/{siapa?}', [UserController::class, 'laporan'])->name('pekat.laporan');
+        Route::get('/logout', [UserController::class, 'logout'])->name('pekat.logout');
+
 });
 
 Route::middleware(['guest'])->group(function () {
-    //Login
-    Route::post('/login/auth', [UserController::class, 'login'])->name('pekat.login');
+        //Login
+        Route::post('/login/auth', [UserController::class, 'login'])->name('pekat.login');
 
-    //Register
-    Route::get('/register', [UserController::class, 'formRegister'])->name('pekat.formRegister');
-    Route::post('/register/auth', [UserController::class, 'register'])->name('pekat.register');
-
+        //Register
+        Route::get('/register', [UserController::class, 'formRegister'])->name('pekat.formRegister');
+        Route::post('/register/auth', [UserController::class, 'register'])->name('pekat.register');
 });
 
-Route::prefix('admin')->group(function (){
+Route::prefix('admin')->group(function () {
 
     Route::middleware(['isAdmin'])->group(function () {
-
         //Petugas
         Route::resource('petugas', PetugasController::class);
 
@@ -54,17 +52,16 @@ Route::prefix('admin')->group(function (){
         //Laporan
         Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
         Route::post('getLaporan', [LaporanController::class, 'getLaporan'])->name('laporan.getLaporan');
-        Route::get('Laporan/cetak/{from}/{to}', [LaporanController::class, 'cetakLaporan'])->name('laporan.cetakLaporan');
-
+        Route::get('laporan/cetak/{from}/{to}', [LaporanController::class, 'cetakLaporan'])->name('laporan.cetakLaporan');
     });
 
     Route::middleware(['isPetugas'])->group(function () {
         //Dashboard
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
         //Pengaduan
         Route::resource('pengaduan', PengaduanController::class);
-        // Route::get('/', [JumlahController::class, 'index'])->name('pengaduan.JumlahLaporan');
+        // Route::get('/', [jumlahPengaduanController::class, 'index'])->name('pekat.index');
 
         //Tanggapan
         Route::post('tanggapan/createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
@@ -74,7 +71,7 @@ Route::prefix('admin')->group(function (){
     });
 
     Route::middleware(['isGuest'])->group(function () {
-        Route::get('/login', [AdminController::class, 'formlogin'])->name('admin.formlogin');
+        Route::get('/login', [AdminController::class, 'formLogin'])->name('admin.formLogin');
         Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
     });
 

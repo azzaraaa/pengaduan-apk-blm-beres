@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function formlogin()
+    public function formLogin()
     {
         return view('Admin.login');
     }
@@ -38,10 +38,10 @@ class AdminController extends Controller
         }
     }
 
-    public function logout(Type $var = null)
+    public function logout()
     {
         Auth::guard('admin')->logout();
 
-        return redirect()->route('admin.formlogin');
+        return redirect()->route('admin.formLogin');
     }
 }

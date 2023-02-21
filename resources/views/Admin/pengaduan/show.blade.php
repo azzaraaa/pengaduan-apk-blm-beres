@@ -17,8 +17,8 @@
         }
 
         .btn-purple{
-            background: #225335;
-            border: 1px solid #225335;
+            background: #5E0606;
+            border: 1px solid #5E0606;
             color: #fff;
             width: 100%;
         }

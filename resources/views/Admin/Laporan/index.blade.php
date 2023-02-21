@@ -55,12 +55,12 @@
                                         <td>{{ $v->tgl_pengaduan }}</td>
                                         <td>{{ $v->isi_laporan }}</td>
                                         <td>
-                                        @if ($v ->status = '0')
+                                        @if ($v ->status == '0')
                                     <a href="#" class="badge badge-danger">Pending</a>
-                                        @elseif ($v ->status = 'proses')
+                                        @elseif ($v ->status == 'proses')
                                             <a href="#" class="bagde badge-warning text-white">Proses</a>
                                         @else
-                                            <a href="#" class="badge badge-warning succes">Selesai</a>
+                                            <a href="#" class="badge badge-success">Selesai</a>
                                         @endif
                                                 </td>
                                     </tr>

@@ -34,7 +34,8 @@ class TanggapanController extends Controller
             $tanggapan = Tanggapan::create([
                 'id_pengaduan' => $request->id_pengaduan,
                 'tgl_tanggapan' => date('Y-m-d'),
-                'isi_tanggapan' => $request->tanggapan,
+                // dirubah tanggapan
+                'isi_tanggapan' => $request->isi_tanggapan,
                 'id_petugas' => Auth::guard('admin')->user()->id_petugas
             ]);
 
