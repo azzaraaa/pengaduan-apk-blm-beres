@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-        <title>Laporan Pengaduan</title>
+
+    <title>Laporan Pengaduan</title>
 </head>
 <body>
+    <a href="https://ibb.co/7nTy5BF"><img src="https://i.ibb.co/YcKjMJG/Screenshot-49.png" alt="Screenshot-49" border="0" /></a>
     <div class="text-center">
-        <h5>Laporan Pengaduan Masyarkat</h5>
-        <h6>Azzaraaa.githu.io</h6>
+        <h5>Laporan Pengaduan Masyarakat</h5>
     </div>
     <div class="container">
         <table class="table">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>No.</th>
                     <th>Tanggal</th>
                     <th>Isi Laporan</th>
                     <th>Status</th>
