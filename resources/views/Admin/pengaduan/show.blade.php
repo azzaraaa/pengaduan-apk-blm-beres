@@ -59,6 +59,21 @@
                                 <td>{{ $pengaduan->isi_laporan}}</td>
                             </tr>
                             <tr>
+                                <th>Tanggal kejadian</th>
+                                <td>:</td>
+                                <td>{{ $pengaduan->tgl_kejadian}}</td>
+                            </tr>
+                            <tr>
+                                <th>Lokasi kejadian</th>
+                                <td>:</td>
+                                <td>{{ $pengaduan->lokasi}}</td>
+                            </tr>
+                            <tr>
+                                <th>Kategori Laporan</th>
+                                <td>:</td>
+                                <td>{{ $pengaduan->kategori}}</td>
+                            </tr>
+                            <tr>
                                 <th>Status</th>
                                 <td>:</td>
                                 <td>

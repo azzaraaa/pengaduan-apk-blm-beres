@@ -21,6 +21,10 @@
                         <div class="form-group">
                             <input type="text" name="to" class="form-control" placeholder="Tanggal Akhir" onfocusin="(this.type='date')" onfocusout="
                             (this.type='text')">
+                        <div class="form-group">
+                             <input type="text" name="from" class="form-control" placeholder="Kategori" onfocusin="(this.type='select')" onfocusout="
+                             (this.type='text')">
+                        </div>
                             <button type="submit" class="btn btn-purple" style="width: 100%">Cari Laporan</button>
                         </div>
                     </form>

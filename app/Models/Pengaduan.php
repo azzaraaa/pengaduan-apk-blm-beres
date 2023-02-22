@@ -14,12 +14,17 @@ class Pengaduan extends Model
     protected $fillable = [
         'tgl_pengaduan',
         'nik',
+        'judul',
+        'isi_laporan',
+        'tgl_kejadian',
+        'lokasi',
+        'kategori',
         'isi_laporan',
         'foto',
         'status'
     ];
 
-    protected $dates = ['tgl_pengaduan'];
+    protected $dates = ['tgl_pengaduan', 'tgl_kejadian'];
 
     public function user()
     {

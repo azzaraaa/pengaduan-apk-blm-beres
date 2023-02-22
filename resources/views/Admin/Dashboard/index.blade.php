@@ -51,7 +51,7 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="card">
-                <div class="card-header text-center text-white" style="background-color: #831212;">Pengaduan Terverivikasi</div>
+                <div class="card-header text-center text-white" style="background-color: #831212;">Pengaduan Terverifikasi</div>
                 <div class="card-body">
                     <div class="text-center">
                         {{$pengaduan}}

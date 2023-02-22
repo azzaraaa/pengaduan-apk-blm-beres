@@ -60,15 +60,42 @@
                 @endforeach
                 @endif
                 @if (Illuminate\Support\Facades\Session::has('pengaduan'))
-                <div class="alert alert-{{ Session::get('type') }}">{{ Illuminate\Support\Facades\Session::get('pengaduan') }}</div>
+                <div class="alert alert-{{ Illuminate\Support\Facades\Session::get('type') }}">{{ Illuminate\Support\Facades\Session::get('pengaduan') }}</div>
                 @endif
                 <div class="card mb-3">Tulis Laporan Disini</div>
-                <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <textarea name="isi_laporan" placeholder="Masukkan Isi Laporan" class="form-control"
-                            rows="4">{{ old('isi_laporan') }}</textarea>
-                    </div>
+            <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
+
+                @csrf
+                <div class="form-group">
+                    <textarea name="judul" placeholder="Masukkan Judul Laporan" class="form-control"
+                        rows="1">{{ old('judul') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <textarea name="isi_laporan" placeholder="Masukkan Isi Laporan" class="form-control"
+                        rows="4">{{ old('isi_laporan') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="tgl_kejadian" class="form-control" placeholder="Tanggal Kejadian" onfocusin="(this.type='date')" onfocusout="
+                    (this.type='text')">{{ old('tgl_kejadian') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <textarea name="lokasi" placeholder="Lokasi Kejadian" class="form-control"
+                        rows="1">{{ old('lokasi') }}</textarea>
+                </div>
+                <div class="input-group mb-3">
+                 <select name="kategori"class="custom-select">
+                        <option selected>Pilih Kategori Laporan</option>
+                        <option value="1">Agama</option>
+                        <option value="2">Ekonomi Dan Keuangan</option>
+                        <option value="3">Kesehatan</option>
+                        <option value="4">Pembangunan Desa, Daerah Tertinggal, Transmigrasi</option>
+                        <option value="5">Kekerasan Di Satuan Pendidikan Sekolah, Kuliah, Lembaga Khusus</option>
+                        <option value="6">Kekerasan Rumah Tangga</option>
+                        <option value="7">Pencegahan, Pemberantasan Penyalahgunaa Dan Peredaran Gelap Narkotika Dan Prekursor Narkotika</option>
+                        <option value="8">Politik Dan Hukum</option>
+                        <option value="8">Sosial Dan Kesejahteraan</option>
+                    </select>
+                </div>
                     <div class="form-group">
                         <input type="file" name="foto" class="form-control">
                     </div>
@@ -81,7 +108,7 @@
                 <div>
                     <img src="{{ asset('images/user_default.svg') }}" alt="user profile" class="photo">
                     <div class="self-align">
-                        <h5><a style="color: #6a70fc" href="#">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a></h5>
+                        <h5><a style="color: #630606" href="#">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a></h5>
                         <p class="text-dark">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->username }}</p>
                     </div>
                     <div class="row text-center">

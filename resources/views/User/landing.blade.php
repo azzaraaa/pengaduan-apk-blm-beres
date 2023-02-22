@@ -10,9 +10,10 @@
 {{-- Section Header --}}
 <section class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container">
+        <div class="container-fluid">
+            <img src="assets/kujug.png" alt="" style="width: 110px" "height:100px">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#" style="margin-left: -30px; margin-top: 30px;">
                     <h4 class="semi-bold mb-0 text-white">ARRA</h4>
                     <p class="italic mt-0 text-white">Aduan Resmi Rakyat</p>
                 </a>
@@ -74,10 +75,37 @@
 
             <div class="card mb-3">Tulis Laporan Disini</div>
             <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
+
                 @csrf
+                <div class="form-group">
+                    <textarea name="judul" placeholder="Masukkan Judul Laporan" class="form-control"
+                        rows="1">{{ old('judul') }}</textarea>
+                </div>
                 <div class="form-group">
                     <textarea name="isi_laporan" placeholder="Masukkan Isi Laporan" class="form-control"
                         rows="4">{{ old('isi_laporan') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="tgl_kejadian" class="form-control" placeholder="Tanggal Kejadian" onfocusin="(this.type='date')" onfocusout="
+                    (this.type='text')">{{ old('tgl_kejadian') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <textarea name="lokasi" placeholder="Lokasi Kejadian" class="form-control"
+                        rows="1">{{ old('lokasi') }}</textarea>
+                </div>
+                <div class="input-group mb-3">
+                 <select name="kategori"class="custom-select">
+                        <option selected>Pilih Kategori Laporan</option>
+                        <option value="1">Agama</option>
+                        <option value="2">Ekonomi Dan Keuangan</option>
+                        <option value="3">Kesehatan</option>
+                        <option value="4">Pembangunan Desa, Daerah Tertinggal, Transmigrasi</option>
+                        <option value="5">Kekerasan Di Satuan Pendidikan Sekolah, Kuliah, Lembaga Khusus</option>
+                        <option value="6">Kekerasan Rumah Tangga</option>
+                        <option value="7">Pencegahan, Pemberantasan Penyalahgunaa Dan Peredaran Gelap Narkotika Dan Prekursor Narkotika</option>
+                        <option value="8">Politik Dan Hukum</option>
+                        <option value="9">Sosial Dan Kesejahteraan</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="file" name="foto" class="form-control">
