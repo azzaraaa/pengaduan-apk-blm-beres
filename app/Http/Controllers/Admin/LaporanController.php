@@ -17,6 +17,7 @@ class LaporanController extends Controller
     {
         $from = $request->from . ' ' . '00:00:00';
         $to = $request->to . ' ' . '23:59:59';
+        // $kategori = Pengaduan::all();
 
         $pengaduan = Pengaduan::whereBetween('tgl_pengaduan', [$from, $to])->get();
 
