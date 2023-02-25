@@ -21,27 +21,7 @@
                         <div class="form-group">
                             <input type="text" name="to" class="form-control" placeholder="Tanggal Akhir" onfocusin="(this.type='date')" onfocusout="
                             (this.type='text')">
-                        <div class="form-group">
-                            {{--  <input type="text" name="from" class="form-control" placeholder="Kategori" onfocusin="(this.type='select')" onfocusout="
-                            (this.type='text')">  --}}
-                            {{--  <select name="kategori" id="kategori">
-                                <option value=""></option>
-                            </select>  --}}
-                            <select name="kategori"class="custom-select">
-                                <option selected>Pilih Kategori Laporan</option>
-                                {{--  @foreach ($kategori as $item)
-                                <option value="1">{{ $item->kategori }}</option>
-                                @endforeach  --}}
-                                <option value="1">Agama</option>
-                                <option value="2">Ekonomi Dan Keuangan</option>
-                                <option value="3">Kesehatan</option>
-                                <option value="4">Pembangunan Desa, Daerah Tertinggal, Transmigrasi</option>
-                                <option value="5">Kekerasan Di Satuan Pendidikan Sekolah, Kuliah, Lembaga Khusus</option>
-                                <option value="6">Kekerasan Rumah Tangga</option>
-                                <option value="7">Pencegahan, Pemberantasan Penyalahgunaa Dan Peredaran Gelap Narkotika Dan Prekursor Narkotika</option>
-                                <option value="8">Politik Dan Hukum</option>
-                                <option value="9">Sosial Dan Kesejahteraan</option>
-                            </select>
+                        <div class="form-group">     
                         </div>
                             <button type="submit" class="btn btn-purple" style="width: 100%">Cari Laporan</button>
                         </div>

@@ -24,12 +24,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     @if(Illuminate\Support\Facades\Auth::guard('masyarakat')->check())
                     <ul class="navbar-nav text-center ml-auto">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link ml-3 text-white" href="{{ route('pekat.laporan') }}">Laporan</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
+                            <p class="nav-link ml-3 text-white" style="text-decoration: none">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</p>
+                        </li>
+                        {{-- <li class="nav-item">
                             <a class="nav-link ml-3 text-white" href="{{ route('pekat.logout') }}"
                                 style="text-decoration: underline">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link ml-3 btn btn-outline-purple" href="{{ route('pekat.logout') }}"
+                                style="text-decoration: underline" onclick="return confirm('Logout Now?')">Logout</a>
                         </li>
                     </ul>
                     @else
@@ -174,7 +181,7 @@
             </div>
             <div class="laporan-bottom">
                 @if ($v->foto != null)
-                <img src="{{ Illuminate\Support\Facades\Storage::url($v->foto) }}" alt="{{ 'Gambar '.$v->judul_laporan }}" class="gambar-lampiran">
+                <img src="{{Illuminate\Support\Facades\Storage::url($v->foto)}}" alt="{{ 'Gambar '.$v->judul_laporan }}" class="gambar-lampiran">
                 @endif
                 @if ($v->tanggapan != null)
                 <p class="mt-3 mb-1">{{ '*Tanggapan dari '. $v->tanggapan->petugas->nama_petugas }}</p>
@@ -199,7 +206,6 @@
 @if (Illuminate\Support\Facades\Session::has('pesan'))
 <script>
     $('#loginModal').modal('show');
-
 </script>
 @endif
 @endsection

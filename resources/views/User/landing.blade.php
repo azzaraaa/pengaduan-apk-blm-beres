@@ -28,7 +28,7 @@
                             <a class="nav-link ml-3 text-white" href="{{ route('pekat.laporan') }}">Laporan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ml-3 text-white" href="{{ route('pekat.logout') }}"
+                            <a class="nav-link ml-3 btn btn-outline-purple" href="{{ route('pekat.logout') }}"
                                 style="text-decoration: underline">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a>
                         </li>
                     </ul>
@@ -73,7 +73,7 @@
                 <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('pengaduan') }}</div>
             @endif
 
-            <div class="card mb-3">Tulis Laporan Disini</div>
+            <div class="card mb-3 text-center">TULIS LAPORAN DISINI</div>
             <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
 
                 @csrf
@@ -94,7 +94,7 @@
                         rows="1">{{ old('lokasi') }}</textarea>
                 </div>
                 <div class="input-group mb-3">
-                 <select name="kategori"class="custom-select">
+                <select name="kategori"class="custom-select">
                         <option selected>Pilih Kategori Laporan</option>
                         <option value="1">Agama</option>
                         <option value="2">Ekonomi Dan Keuangan</option>
@@ -148,7 +148,7 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn- text-white mt-3" style="width: 100%">MASUK</button>
+                    <button type="submit" class="btn text-white btn-purple mt-3" style="width: 100%;">MASUK</button>
                 </form>
                 @if (Illuminate\Support\Facades\Session::has('pesan'))
                 <div class="alert alert-danger mt-2">

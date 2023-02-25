@@ -49,6 +49,9 @@
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\pengaduan') ? 'active' : '' }}">
                     <a href="{{ route('pengaduan.index') }}"<i class="bi bi-journals"></i> PENGADUAN</a>
                 </li>
+                <li class="{{ Illuminate\Support\Facades\Request::is('admin\laporan') ? 'active' : '' }}">
+                    <a href="{{ route('laporan.index') }}"<i class="bi bi-folder"></i> LAPORAN</a>
+                </li>
 
                 @if (Illuminate\Support\Facades\Auth::guard('admin')->user()->level == 'admin')
 

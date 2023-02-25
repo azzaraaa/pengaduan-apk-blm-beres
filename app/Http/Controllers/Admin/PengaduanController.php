@@ -14,7 +14,7 @@ class PengaduanController extends Controller
 
         $pengaduan = Pengaduan::orderBy('tgl_pengaduan', 'desc')->get();
 
-        return view('Admin.Pengaduan.index', ['pengaduan' => $pengaduan]);
+        return view('Admin.pengaduan.index', ['pengaduan' => $pengaduan]);
     }
 
     public function show($id_pengaduan)
@@ -23,7 +23,7 @@ class PengaduanController extends Controller
 
         $tanggapan = Tanggapan::where('id_pengaduan', $id_pengaduan)->first();
 
-        return view('Admin\Pengaduan\show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan]);
+        return view('Admin.pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan]);
     }
 
 }

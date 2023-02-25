@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\MasyarakatController;
 use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\TanggapanController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\User\jumlahPengaduanController;
+use App\Http\Controllers\User\JumlahController;
 use App\Http\Controllers\Petugas\Petugas2Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [jumlahPengaduanController::class, 'index'])->name('pekat.index');
+Route::get('/', [JumlahController::class, 'index'])->name('pekat.index');
 
 Route::middleware(['isMasyarakat'])->group(function () {
         Route::post('/store', [UserController::class, 'storePengaduan'])->name('pekat.store');
@@ -61,10 +61,15 @@ Route::prefix('admin')->group(function () {
 
         //Pengaduan
         Route::resource('pengaduan', PengaduanController::class);
-        // Route::get('/', [jumlahPengaduanController::class, 'index'])->name('pekat.index');
+        // Route::get('/', [JumlahController::class, 'index'])->name('pekat.index');
 
         //Tanggapan
         Route::post('tanggapan/createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
+
+        //Laporan
+        Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::post('getLaporan', [LaporanController::class, 'getLaporan'])->name('laporan.getLaporan');
+        Route::get('laporan/cetak/{from}/{to}', [LaporanController::class, 'cetakLaporan'])->name('laporan.cetakLaporan');
 
         //Logout
         Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');

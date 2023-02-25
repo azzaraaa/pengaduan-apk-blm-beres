@@ -46,7 +46,7 @@
                     @elseif($v ->kategori == '8')
                         <p>Politik Dan Hukum</p>
                     @else
-                      <p>Sosial Dan Kesejahteraan</p>
+                        <p>Sosial Dan Kesejahteraan</p>
                     @endif
                 <td>
                     @if ($v ->status == '0')
