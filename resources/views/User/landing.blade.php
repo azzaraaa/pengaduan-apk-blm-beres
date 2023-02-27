@@ -25,11 +25,11 @@
                     @if(Illuminate\Support\Facades\Auth::guard('masyarakat')->check())
                     <ul class="navbar-nav text-center ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link ml-3 text-white" href="{{ route('pekat.laporan') }}">Laporan</a>
+                            <a class="nav-link ml-3 text-white" href="{{ route('pekat.laporan') }}">Laporan {{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ml-3 btn btn-outline-purple" href="{{ route('pekat.logout') }}"
-                                style="text-decoration: underline">{{ Illuminate\Support\Facades\Auth::guard('masyarakat')->user()->nama }}</a>
+                                style="text-decoration: underline">Logout</a>
                         </li>
                     </ul>
                     @else
@@ -150,6 +150,7 @@
                     </div>
                     <button type="submit" class="btn text-white btn-purple mt-3" style="width: 100%;">MASUK</button>
                 </form>
+                <a href="admin/login" class="btn text-white btn-purple mt-3" style="width: 100%;">LOGIN SEBAGAI ADMIN/PETUGAS</button>
                 @if (Illuminate\Support\Facades\Session::has('pesan'))
                 <div class="alert alert-danger mt-2">
                     {{ Illuminate\Support\Facades\Session::get('pesan') }}
