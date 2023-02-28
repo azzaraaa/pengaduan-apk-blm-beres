@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-4 col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-center">
                     Cari Berdasarkan Tanggal
                 </div>
                 <div class="card-body">
@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-8 col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-center">
                     Data Berdasarkan Tanggal
                     <div class="float-right">
                         @if ($pengaduan ?? '')

@@ -36,7 +36,7 @@
                         </li> --}}
                         <li class="nav-item">
                             <a class="nav-link ml-3 btn btn-outline-purple" href="{{ route('pekat.logout') }}"
-                                style="text-decoration: underline" onclick="return confirm('Logout Now?')">Logout</a>
+                                style="text-decoration: underline" onclick="return confirm('Are you sure to Logout?')">Logout</a>
                         </li>
                     </ul>
                     @else

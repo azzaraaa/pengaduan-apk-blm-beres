@@ -67,7 +67,7 @@
 
                 @endif
                 <li class="{{ Illuminate\Support\Facades\Request::is('admin\logout') }}">
-                    <a href="{{ route('admin.logout') }}" onclick="return confirm('Logout Now?')"><i class="bi bi-door-open"></i> LOG OUT</a>
+                    <a href="{{ route('admin.logout') }}" onclick="return confirm('Are you sure to Logout?')"><i class="bi bi-door-open"></i> LOG OUT</a>
                 </li>
             </ul>
         </nav>
