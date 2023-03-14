@@ -138,7 +138,7 @@
             <div class="modal-body">
                 <h3 class="mt-3">Masuk terlebih dahulu</h3>
                 <p>Silahkan masuk menggunakan akun yang sudah didaftarkan.</p>
-                <form action="{{ route('pekat.login') }}" method="POST">
+                <form action="{{ route('pekat.login') }}" method="POST">    
                     @csrf
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -150,7 +150,6 @@
                     </div>
                     <button type="submit" class="btn text-white btn-purple mt-3" style="width: 100%;">MASUK</button>
                 </form>
-                <a href="admin/login" class="btn text-white btn-purple mt-3" style="width: 100%;">LOGIN SEBAGAI ADMIN/PETUGAS</button>
                 @if (Illuminate\Support\Facades\Session::has('pesan'))
                 <div class="alert alert-danger mt-2">
                     {{ Illuminate\Support\Facades\Session::get('pesan') }}
@@ -163,10 +162,26 @@
 @endsection
 
 @section('js')
-    @if (Illuminate\Support\Facades\Session::has('pesan'))
+    @if (Illuminate\Support\Facades\Session::has('berhasil'))
     <script>
         $('#loginModal').modal('show');
 
     </script>
     @endif
+
+    {{-- <script>
+        // Dapatkan elemen form dan tombol kirim
+        const formPengaduan = document.getElementById('form-pengaduan');
+        const btnKirim = formPengaduan.querySelector('button[type="submit"]');
+    
+        // Tambahkan event listener pada tombol kirim
+        btnKirim.addEventListener('click', function(event) {
+            // Cek apakah pengguna sudah login atau belum
+            if (!{{ Auth::guard('masyarakat')->user() ? 'true' : 'false' }}) {
+                // Tampilkan modal login jika belum login
+                event.preventDefault(); // Mencegah form dikirim
+                $('#exampleModal').modal('show'); // Menampilkan modal login
+            }
+        });
+    </script> --}}
 @endsection

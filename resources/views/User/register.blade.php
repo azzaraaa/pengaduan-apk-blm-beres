@@ -28,7 +28,7 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h2 class="text-center mb-5">FORM DAFTAR</h2>
-                    <form action="{{ route('pekat.register') }}" method="POST">
+                    <form action="{{ route('pekat.register') }}" method="POST" role="form">
                         @csrf
                         <div class="form-group">
                             <input type="number" name="nik" placeholder="NIK" class="form-control">
@@ -51,7 +51,7 @@
             </div>
             @if (Illuminate\Support\Facades\Session::has('pesan'))
             <div class="alert alert-danger mt-2">
-                {{ Session::get('pesan') }}
+                {{Illuminate\Support\Facades\Session::get('pesan') }}
             </div>
             @endif
             <a href="{{ route('pekat.index') }}" class="btn btn-purple text-white mt-3" style="width: 100%">Kembali ke Halaman Utama</a>

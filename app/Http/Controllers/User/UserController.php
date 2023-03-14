@@ -78,7 +78,7 @@ class UserController extends Controller
             'telp' => $data['telp'],
         ]);
 
-        return redirect()->route('pekat.index');
+        return redirect()->route('pekat.index')->with(['berhasil' => 'Anda berhasil registrasi, silahkan anda login']);
     }
 
     public function logout()

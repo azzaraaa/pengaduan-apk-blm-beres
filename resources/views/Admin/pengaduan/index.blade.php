@@ -29,21 +29,21 @@
                 <td>{{ $v ->tgl_kejadian->format('d-M-Y') }}</td>
                 <td>{{ $v ->lokasi }}</td>
                 <td>
-                    @if($v ->kategori == '1')
+                    @if($v ->kategori == 'Agama')
                         <p>Agama</p>
-                    @elseif($v ->kategori == '2')
+                    @elseif($v ->kategori == 'Ekonomi Dan Keuangan')
                         <p>Ekonomi Dan Keuangan</p>
-                    @elseif($v ->kategori == '3')
+                    @elseif($v ->kategori == 'Kesehatan')
                         <p>Kesehatan</p>
-                    @elseif($v ->kategori == '4')
+                    @elseif($v ->kategori == 'Pembangunan Desa, Daerah Tertinggal, Transmigrasi')
                         <p>Pembangunan Desa, Daerah Tertinggal, Transmigrasi</p>
-                    @elseif($v ->kategori == '5')
+                    @elseif($v ->kategori == 'Kekerasan Di Satuan Pendidikan Sekolah, Kuliah, Lembaga Khusus')
                         <p>Kekerasan Di Satuan Pendidikan Sekolah, Kuliah, Lembaga Khusus</p>
-                    @elseif($v ->kategori == '6')
+                    @elseif($v ->kategori == 'Kekerasan Rumah Tangga')
                         <p>Kekerasan Rumah Tangga</p>
-                    @elseif($v ->kategori == '7')
+                    @elseif($v ->kategori == 'Pencegahan, Pemberantasan Penyalahgunaa Dan Peredaran Gelap Narkotika Dan Prekursor Narkotika')
                         <p>Pencegahan, Pemberantasan Penyalahgunaa Dan Peredaran Gelap Narkotika Dan Prekursor Narkotika</p>
-                    @elseif($v ->kategori == '8')
+                    @elseif($v ->kategori == 'Politik Dan Hukum')
                         <p>Politik Dan Hukum</p>
                     @else
                         <p>Sosial Dan Kesejahteraan</p>

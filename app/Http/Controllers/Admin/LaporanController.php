@@ -32,3 +32,5 @@ class LaporanController extends Controller
        return $pdf->download('laporan-pengaduan.pdf');
     }
 }
+
+ 
